@@ -526,10 +526,10 @@ button:hover {
 .modalform svg {
     position: absolute;
     left: 50px;
-    margin-top: 15px;
+    margin-top: 30px;
 }
-label div:focus,
-label div:hover {
+.modalform .icon:focus,
+.modalform .icon:hover {
     fill: var(--blue-color);
 }
 .border:focus,
