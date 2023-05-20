@@ -506,9 +506,47 @@ button:hover {
     padding: 12px 16px 12px 16px;
 }
 .checkbox input {
-    width: 16px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 77%;
+    left: 10%;
     height: 16px;
-    margin-bottom:30px;
+    width: 16px;
+    background-color: var(--white-color);
+    border: 2px solid #212121;
+    border-radius: 2px;
+}
+.checkbox input:hover ~ .checkmark {
+    background-color:var(--light-color);
+}
+.checkbox input:checked ~ .checkmark {
+    background-color: var(--blue-color);
+    border: none;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--white-color);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .modalform a {
     color: var(--blue-color);
@@ -520,6 +558,7 @@ button:hover {
     height: 50px;
     background-color: var(--blue-color);
     color:var(--white-color);
+    margin-top: 30px;
 }
 .modalform button:hover {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
